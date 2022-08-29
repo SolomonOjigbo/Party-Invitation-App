@@ -1,11 +1,4 @@
-interface IProps {
-	people: {
-		name: string;
-		age: number;
-		img: string;
-		note?: string;
-	}[];
-}
+import { IState as IProps } from "../App";
 
 const Invitees: React.FC<IProps> = ({ people }) => {
 	const guestList = (): JSX.Element[] => {
@@ -13,7 +6,7 @@ const Invitees: React.FC<IProps> = ({ people }) => {
 			return (
 				<li className="List">
 					<div className="List-header">
-						<img className="List-img" src={person.img} />
+						<img className="List-img" src={person.img} alt={person.name} />
 						<h2> {person.name}</h2>
 					</div>
 					<p> {person.age} years old</p>
